@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: target_x
+    schema: target_x
+    tables:
+      - name: table_a
+      - name: table_b
+  - name: target_y
+    schema: target_y
+    tables:
+      - name: table_a
+      - name: table_b
+
+models:
+  - name: compare_table_a
+    config:
+      materialized: table
+  - name: compare_table_b
+    config:
+      materialized: table

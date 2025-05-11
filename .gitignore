@@ -1,0 +1,13 @@
+package-lock.yml
+
+# VS Code and devcontainer
+.vscode/
+.devcontainer/
+
+# DBT packages and logs
+logs/
+dbt_packages/
+target/
+
+# Editor state
+.cursor/

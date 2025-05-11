@@ -1,0 +1,9 @@
+version: 1
+
+comparison_pairs:
+  - name: table_a
+    dts: table_a
+    airbyte: table_a
+  - name: table_b
+    dts: table_b
+    airbyte: table_b
