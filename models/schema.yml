@@ -11,6 +11,10 @@ sources:
     tables:
       - name: table_a
       - name: table_b
+  - name: dbt_test
+    schema: dbt_test
+    tables:
+      - name: events
 
 models:
   - name: compare_table_a
@@ -19,3 +23,5 @@ models:
   - name: compare_table_b
     config:
       materialized: table
+  - name: incremental_model
+  
