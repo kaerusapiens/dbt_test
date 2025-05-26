@@ -4,6 +4,7 @@ package-lock.yml
 .vscode/
 .devcontainer/
 
+
 # DBT packages and logs
 logs/
 dbt_packages/
