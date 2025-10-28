@@ -1,0 +1,22 @@
+repos:
+
+  # dbt-checkpoint: dbt를 위한 각종 검사
+  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+    rev: v1.1.1
+    hooks:
+      - id: check-script-semicolon  # 세미콜론 검사
+
+  # dbt-autofix 추가
+  - repo: https://github.com/dbt-labs/dbt-autofix
+    rev: v0.14.0
+    hooks:
+      - id: dbt-autofix-fix
+        args: [--behavior-change]  # deprecated 변경 감지
+
+  - repo: local
+    hooks:
+      - id: dbt-project-evaluator
+        name: Run dbt_project_evaluator
+        entry: >
+          bash -c "dbt build --warn-error --select package:dbt_project_evaluator --no-color 2>&1 | tee /dev/stderr"
+        language: system
