@@ -4,7 +4,11 @@ repos:
   - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
     rev: v1.1.1
     hooks:
-      - id: check-script-semicolon  # 세미콜론 검사
+      - id: check-source-columns-have-desc # source의 column에 description이 있는지 검사
+      - id: check-source-has-all-columns # source에 정의된 모든 column이 model에 포함되어 있는지 검사
+      - id: check-model-tags # model에 태그가 있는지 검사
+        args: ["--tags", "comparison", "incremental"]
+      - id: check-model-has-description # model에 description이 있는지 검사
 
   # dbt-autofix 추가
   - repo: https://github.com/dbt-labs/dbt-autofix
