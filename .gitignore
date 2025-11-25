@@ -1,4 +1,9 @@
-package-lock.yml
+/.devcontainer/.env
+*.pyc
+__pycache__/
+/.venv
+.env
+.DS_Storepackage-lock.yml
 
 # VS Code and devcontainer
 .vscode/
@@ -12,3 +17,4 @@ target/
 
 # Editor state
 .cursor/
+dbt_internal_packages/

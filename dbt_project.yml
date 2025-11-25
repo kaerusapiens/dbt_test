@@ -1,5 +1,6 @@
 name: dbt_test
 version: '1.0'
+require-dbt-version: [">=1.8.0"]
 
 profile: default
 

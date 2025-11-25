@@ -5,23 +5,68 @@ sources:
     schema: target_x
     tables:
       - name: table_a
+        columns:
+          - name: created_at
+            description: "Record creation timestamp"
+          - name: name
+            description: "Name field"
+          - name: ids
+            description: "Identifier field"
       - name: table_b
+        columns:
+          - name: created_at
+            description: "Record creation timestamp"
+          - name: name
+            description: "Name field"
+          - name: id
+            description: "Identifier field"
   - name: target_y
     schema: target_y
     tables:
       - name: table_a
+        columns:
+          - name: created_at
+            description: "Record creation timestamp"
+          - name: name
+            description: "Name field"
+          - name: id
+            description: "Identifier field"
       - name: table_b
+        columns:
+          - name: created_at
+            description: "Record creation timestamp"
+          - name: name
+            description: "Name field"
+          - name: id
+            description: "Identifier field"
   - name: dbt_test
     schema: dbt_test
     tables:
       - name: events
+        columns:
+          - name: event_type
+            description: "Type of event"
+          - name: event_timestamp
+            description: "Timestamp when the event occurred"
+          - name: user_id
+            description: "User identifier"
+          - name: id
+            description: "Event identifier"
 
 models:
   - name: compare_table_a
+    description: "Comparison table A for analyzing data differences"
     config:
       materialized: table
-  - name: compare_table_b
-    config:
-      materialized: table
-  - name: incremental_model
+      tags: ["comparison", "table_a"]
   
+  - name: compare_table_b
+    description: "Comparison table B for analyzing data differences"
+    config:
+      materialized: table
+      tags: ["comparison", "table_b"]
+  
+  - name: incremental_model
+    description: "Incremental model for data processing"
+    config:
+      tags: ["incremental"]
